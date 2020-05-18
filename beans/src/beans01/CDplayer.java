@@ -1,6 +1,7 @@
 package beans01;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
@@ -17,12 +18,12 @@ public class CDplayer implements MediaPlayer{
 
 
     @Autowired
-    public CDplayer(CompactDisc cd) {
+    public CDplayer(@Qualifier("compactDisc") CompactDisc cd) {
         this.cd=cd;
     }
 
     @Autowired
-    public void setCompactDisc(CompactDisc cd) {
+    public void setCompactDisc(@Qualifier("compactDisc2") CompactDisc cd) {
         this.cd=cd;
     }
 

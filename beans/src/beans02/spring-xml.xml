@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context">
+    <!-- configuration details go here -->
+    <bean id="compactDisc" class="beans01.SgtPeppers"/>
+    <bean id="cdPlayer" class="beans01.CDplayer">
+        <constructor-arg ref="compactDisc"/>
+    </bean>
+    <bean id="compactDisc2" class="beans02.BlackDisc">
+        <constructor-arg value="apple"/>
+        <constructor-arg value="The Beatles"/>
+    </bean>
+    <bean id="compactDisc3" class="beans02.BlackDisc02">
+        <constructor-arg value="Club Band"/>
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg>
+            <list>
+                <value>apple</value>
+                <value>banana</value>
+                <value>orange</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
